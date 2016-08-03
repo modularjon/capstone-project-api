@@ -1,11 +1,11 @@
 class PostsController < ProtectedController
-  skip_before_action :authenticate, only: [:index, :show]
+  # skip_before_action :authenticate, only: [:index, :show]
   before_action :set_post, only: [:show, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where user_id: current_user.id
 
     render json: @posts
   end
