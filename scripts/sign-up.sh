@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl --include --request POST http://localhost:3000/sign-up \
+curl --include --request POST https://nameless-atoll-65191.herokuapp.com/sign-up \
   --header "Content-Type: application/json" \
   --data "{
     \"credentials\": {
